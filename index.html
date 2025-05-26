@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Panadería Alicia – Pan Artesanal Personalizado</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Tu CSS -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Header con Nav y Hero -->
+  <header>
+    <div class="header-inner">
+      <h1>🥖 Panadería Alicia</h1>
+      <button class="hamburger" id="hamburger" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="nav-menu">
+        <a href="#crear" class="nav-link">Crear Pan</a>
+        <a href="#menu" class="nav-link">Nuestro Menú</a>
+      </nav>
+    </div>
+    
+    <!-- Sección Hero -->
+    <div class="hero">
+      <div class="hero-content">
+        <h2 class="hero-title">Pan Artesanal Hecho a Mano</h2>
+        <p class="hero-subtitle">Personaliza tu pan fresco diario con ingredientes premium</p>
+        <a href="#crear" class="cta-button">Crear Ahora →</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Introducción (sólo en desktop, ocúltala en mobile si lo prefieres) -->
+  <p class="intro">
+    En Alicia elaboramos panes artesanales y repostería tradicional con ingredientes de la más alta calidad.  
+    Personaliza tu pan a tu gusto o elige de nuestro menú y recíbelo fresco cada día.
+  </p>
+
+  <main class="layout">
+   <!-- Crear Pan Mejorado -->
+<section id="crear" class="card form-card">
+  <div class="form-header">
+    <h2>Crea tu <span>pan a medida</span></h2>
+    <p class="form-subtitle">Elige ingredientes y detalles para un pan único</p>
+  </div>
+
+  <form id="pedidoForm" action="mailto:alicia@panaderia.com" method="POST" enctype="text/plain">
+    <!-- Ingredientes -->
+    <fieldset>
+      <legend>Ingredientes Disponibles</legend>
+      <div class="grid-2">
+        <label>
+          <input type="checkbox" name="Ingredientes" value="Harina integral" />
+          <span>Harina integral</span>
+        </label>
+        <label>
+          <input type="checkbox" name="Ingredientes" value="Avena" />
+          <span>Avena</span>
+        </label>
+        <label>
+          <input type="checkbox" name="Ingredientes" value="Pasas" />
+          <span>Pasas</span>
+        </label>
+        <label>
+          <input type="checkbox" name="Ingredientes" value="Chispas de chocolate" />
+          <span>Chispas de chocolate</span>
+        </label>
+        <label>
+          <input type="checkbox" name="Ingredientes" value="Canela" />
+          <span>Canela</span>
+        </label>
+        <label>
+          <input type="checkbox" name="Ingredientes" value="Nueces" />
+          <span>Nueces</span>
+        </label>
+      </div>
+    </fieldset>
+
+    <!-- Descripción con icono -->
+    <div class="input-icon">
+      <svg viewBox="0 0 24 24"><path d="M3 21v-3.75L17.81 2.44a1 1 0 0 1 1.42 0l2.34 2.34a1 1 0 0 1 0 1.42L6.75 21H3z"/></svg>
+      <textarea id="descripcion" name="Descripción" rows="4" placeholder="Ej: Pan grande, corteza crujiente..." required></textarea>
+    </div>
+
+    <!-- Imágenes de referencia -->
+    <fieldset>
+      <legend>Referencias Visuales (URL)</legend>
+      <div class="image-inputs">
+        <div class="img-input input-icon">
+          <svg viewBox="0 0 24 24"><path d="M5 20h14v-2H5v2zm0-4h14v-2H5v2zm0-4h14V10H5v2zm0-4h14V6H5v2z"/></svg>
+          <input type="url" name="Imagen1" placeholder="https://ejemplo.com/imagen.jpg" data-target="preview1" />
+          <div class="img-wrapper"><img id="preview1" alt="Preview 1" class="hidden" /></div>
+        </div>
+      </div>
+    </fieldset>
+
+    <button type="submit" class="btn-submit">Enviar pedido</button>
+  </form>
+</section>
+
+
+    <!-- Nuestro Menú -->
+    <section id="menu" class="card menu-card">
+      <h2>🎂 Nuestro Menú</h2>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <div class="img-wrapper"><img src="https://png.pngtree.com/png-clipart/20240405/original/pngtree-whole-grain-bread-on-the-transparent-background-png-image_14759029.png" alt="Pan Integral"></div>
+          <h3>Pan Integral</h3>
+          <p>Harina integral, avena y semillas.</p>
+          <span class="price">120 ₵</span>
+        </div>
+        <div class="menu-item">
+          <div class="img-wrapper"><img src="https://static.vecteezy.com/system/resources/previews/034/617/037/non_2x/banana-bread-with-ai-generated-free-png.png" alt="Pan de Plátano"></div>
+          <h3>Pan de Plátano</h3>
+          <p>Con pasas y chispas de chocolate.</p>
+          <span class="price">65 ₵</span>
+        </div>
+        <div class="menu-item">
+          <div class="img-wrapper"><img src="https://cdn.craft.cloud/224393fa-1975-4d80-9067-ada3cb5948ca/assets/Rollitos_Receta.png" alt="Roll de Canela"></div>
+          <h3>Roll de Canela</h3>
+          <p>Suave y esponjoso, con canela especiada.</p>
+          <span class="price">35 ₵</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Panadería Alicia. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    // Toggle menú hamburguesa
+    const burger = document.getElementById('hamburger');
+    const nav = document.getElementById('nav-menu');
+    burger.addEventListener('click', () => {
+      nav.classList.toggle('open');
+      burger.classList.toggle('open');
+    });
+
+    // Previews de imágenes
+    document.querySelectorAll('.img-input input[type="url"]').forEach(input => {
+      input.addEventListener('input', () => {
+        const img = document.getElementById(input.dataset.target);
+        if (input.value.trim()) {
+          img.src = input.value.trim();
+          img.classList.remove('hidden');
+        } else {
+          img.src = '';
+          img.classList.add('hidden');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
