@@ -6,6 +6,8 @@
   <title>Panadería Alicia – Pan Artesanal Personalizado</title>
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <!-- Tu CSS -->
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -13,121 +15,156 @@
   <!-- Header con Nav y Hero -->
   <header>
     <div class="header-inner">
-      <h1>🥖 Panadería Alicia</h1>
+      <h1>Panadería Alicia</h1>
       <button class="hamburger" id="hamburger" aria-label="Menú">
         <span></span><span></span><span></span>
       </button>
       <nav id="nav-menu">
         <a href="#crear" class="nav-link">Crear Pan</a>
+        <a href="#proceso" class="nav-link">Cómo Funciona</a>
         <a href="#menu" class="nav-link">Nuestro Menú</a>
       </nav>
     </div>
-    
     <!-- Sección Hero -->
     <div class="hero">
       <div class="hero-content">
         <h2 class="hero-title">Pan Artesanal Hecho a Mano</h2>
         <p class="hero-subtitle">Personaliza tu pan fresco diario con ingredientes premium</p>
-        <a href="#crear" class="cta-button">Crear Ahora →</a>
+        <a href="#crear" class="cta-button">Crear Ahora <i class="fas fa-arrow-right"></i></a>
       </div>
     </div>
   </header>
 
-  <!-- Introducción (sólo en desktop, ocúltala en mobile si lo prefieres) -->
+  <!-- Introducción -->
   <p class="intro">
     En Alicia elaboramos panes artesanales y repostería tradicional con ingredientes de la más alta calidad.  
     Personaliza tu pan a tu gusto o elige de nuestro menú y recíbelo fresco cada día.
   </p>
 
+  <!-- Sticky CTA -->
+  <a href="#crear" class="sticky-cta"><i class="fas fa-bread-slice"></i> ¡Crea tu Pan Ahora!</a>
+
   <main class="layout">
-   <!-- Crear Pan Mejorado -->
-<section id="crear" class="card form-card">
-  <div class="form-header">
-    <h2>Crea tu <span>pan a medida</span></h2>
-    <p class="form-subtitle">Elige ingredientes y detalles para un pan único</p>
-  </div>
-
-  <form id="pedidoForm" action="mailto:alicia@panaderia.com" method="POST" enctype="text/plain">
-    <!-- Ingredientes -->
-    <fieldset>
-      <legend>Ingredientes Disponibles</legend>
-      <div class="grid-2">
-        <label>
-          <input type="checkbox" name="Ingredientes" value="Harina integral" />
-          <span>Harina integral</span>
-        </label>
-        <label>
-          <input type="checkbox" name="Ingredientes" value="Avena" />
-          <span>Avena</span>
-        </label>
-        <label>
-          <input type="checkbox" name="Ingredientes" value="Pasas" />
-          <span>Pasas</span>
-        </label>
-        <label>
-          <input type="checkbox" name="Ingredientes" value="Chispas de chocolate" />
-          <span>Chispas de chocolate</span>
-        </label>
-        <label>
-          <input type="checkbox" name="Ingredientes" value="Canela" />
-          <span>Canela</span>
-        </label>
-        <label>
-          <input type="checkbox" name="Ingredientes" value="Nueces" />
-          <span>Nueces</span>
-        </label>
+    <!-- Crear Pan Mejorado -->
+    <section id="crear" class="card form-card">
+      <div class="form-header">
+        <h2>Crea tu <span>pan a medida</span></h2>
+        <p class="form-subtitle">Elige ingredientes y detalles para un pan único</p>
       </div>
-    </fieldset>
+      <form id="pedidoForm" action="mailto:alicia@panaderia.com" method="POST" enctype="text/plain">
+        <!-- Ingredientes como imágenes -->
+        <fieldset>
+          <legend>Ingredientes Disponibles</legend>
+          <div class="ingredients-grid">
+            <div class="ingredient" data-name="Harina integral" data-img="https://www.pastasgallo.es/wp-content/uploads/2020/12/pack_harina_integral.png">
+              <img src="https://www.pastasgallo.es/wp-content/uploads/2020/12/pack_harina_integral.png" alt="Harina integral" />
+              <span>Harina integral</span>
+            </div>
+            <div class="ingredient" data-name="Avena" data-img="https://static.vecteezy.com/system/resources/previews/041/177/157/non_2x/ai-generated-crispy-corn-flakes-pile-free-png.png">
+              <img src="https://static.vecteezy.com/system/resources/previews/041/177/157/non_2x/ai-generated-crispy-corn-flakes-pile-free-png.png" alt="Avena" />
+              <span>Avena</span>
+            </div>
+            <div class="ingredient" data-name="Pasas" data-img="https://png.pngtree.com/png-clipart/20241017/original/pngtree-a-bowl-of-raisins-on-transparent-background-png-image_16366849.png">
+              <img src="https://png.pngtree.com/png-clipart/20241017/original/pngtree-a-bowl-of-raisins-on-transparent-background-png-image_16366849.png" alt="Pasas" />
+              <span>Pasas</span>
+            </div>
+            <div class="ingredient" data-name="Chispas de chocolate" data-img="https://static.vecteezy.com/system/resources/thumbnails/015/268/103/small_2x/scattering-of-tasty-chocolate-chips-chocolate-morsels-choco-chips-3d-illustration-png.png">
+              <img src="https://static.vecteezy.com/system/resources/thumbnails/015/268/103/small_2x/scattering-of-tasty-chocolate-chips-chocolate-morsels-choco-chips-3d-illustration-png.png" alt="Chispas de chocolate" />
+              <span>chocolate</span>
+            </div>
+            <div class="ingredient" data-name="Canela" data-img="https://static.vecteezy.com/system/resources/previews/025/252/289/non_2x/fresh-cinnamon-sticks-ai-generative-png.png">
+              <img src="https://static.vecteezy.com/system/resources/previews/025/252/289/non_2x/fresh-cinnamon-sticks-ai-generative-png.png" alt="Canela" />
+              <span>Canela</span>
+            </div>
+            <div class="ingredient" data-name="Nueces" data-img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRECP-CIdFnI0nak5kpKv_yy_kfkXlss_BgUw&s">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRECP-CIdFnI0nak5kpKv_yy_kfkXlss_BgUw&s" alt="Nueces" />
+              <span>Nueces</span>
+            </div>
+             <div class="ingredient" data-name="Banana" data-img="https://upload.wikimedia.org/wikipedia/commons/6/69/Banana.png">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/Banana.png" alt="Banana" />
+              <span>Banana</span>
+            </div>
+            <div class="ingredient" data-name="Mermelada" data-img="https://png.pngtree.com/png-vector/20240715/ourmid/pngtree-homemade-jams-delicious-strawberry-jam-in-glass-jars-artisanal-raspberry-with-png-image_13094541.png">
+              <img src="https://png.pngtree.com/png-vector/20240715/ourmid/pngtree-homemade-jams-delicious-strawberry-jam-in-glass-jars-artisanal-raspberry-with-png-image_13094541.png" alt="Mermelada" />
+              <span>Mermelada</span>
+            </div>
+            <div class="ingredient" data-name="Fresa" data-img="https://static.vecteezy.com/system/resources/thumbnails/025/067/637/small/strawberry-with-ai-generated-free-png.png">
+              <img src="https://static.vecteezy.com/system/resources/thumbnails/025/067/637/small/strawberry-with-ai-generated-free-png.png" alt="Fresa" />
+              <span>Fresa</span>
+            </div>
+            <div class="ingredient" data-name="Mantequilla" data-img="https://santaisabel.vtexassets.com/arquivos/ids/176706/Mantequilla-Colun-con-sal-125-g.jpg?v=637613089455570000">
+              <img src="https://santaisabel.vtexassets.com/arquivos/ids/176706/Mantequilla-Colun-con-sal-125-g.jpg?v=637613089455570000" alt="Mantequilla" />
+              <span>Mantequilla</span>
+            </div>
+          </div>
+          <div class="selected-ingredients">
+            <h3><i class="fas fa-shopping-basket"></i> Ingredientes seleccionados:</h3>
+            <div class="cart-grid"></div>
+          </div>
+        </fieldset>
 
-    <!-- Descripción con icono -->
-    <div class="input-icon">
-      <svg viewBox="0 0 24 24"><path d="M3 21v-3.75L17.81 2.44a1 1 0 0 1 1.42 0l2.34 2.34a1 1 0 0 1 0 1.42L6.75 21H3z"/></svg>
-      <textarea id="descripcion" name="Descripción" rows="4" placeholder="Ej: Pan grande, corteza crujiente..." required></textarea>
-    </div>
-
-    <!-- Imágenes de referencia -->
-    <fieldset>
-      <legend>Referencias Visuales (URL)</legend>
-      <div class="image-inputs">
-        <div class="img-input input-icon">
-          <svg viewBox="0 0 24 24"><path d="M5 20h14v-2H5v2zm0-4h14v-2H5v2zm0-4h14V10H5v2zm0-4h14V6H5v2z"/></svg>
-          <input type="url" name="Imagen1" placeholder="https://ejemplo.com/imagen.jpg" data-target="preview1" />
-          <div class="img-wrapper"><img id="preview1" alt="Preview 1" class="hidden" /></div>
+        <!-- Descripción con icono -->
+        <div class="input-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 21v-3.75L17.81 2.44a1 1 0 0 1 1.42 0l2.34 2.34a1 1 0 0 1 0 1.42L6.75 21H3z"/></svg>
+          <textarea id="descripcion" name="Descripción" rows="4" placeholder="Ej: Pan grande, corteza crujiente, sin gluten..." required></textarea>
         </div>
-      </div>
-    </fieldset>
 
-    <button type="submit" class="btn-submit">Enviar pedido</button>
-  </form>
-</section>
+        <!-- Imágenes de referencia (subida desde galería) -->
+        <fieldset>
+          <legend>Referencias Visuales</legend>
+          <div class="image-inputs">
+            <div class="img-input">
+              <input
+                type="file"
+                name="Imagen1"
+                accept="image/*"
+                id="fileInput1"
+                data-target="preview1"
+              />
+              <div class="img-wrapper">
+                <img id="preview1" alt="Preview 1" class="hidden" />
+              </div>
+            </div>
+          </div>
+        </fieldset>
 
+        <button type="submit" class="btn-submit">Enviar pedido</button>
+      </form>
+    </section>
 
     <!-- Nuestro Menú -->
     <section id="menu" class="card menu-card">
-      <h2>🎂 Nuestro Menú</h2>
+      <h2><i class="fas fa-utensils"></i> Nuestro Menú</h2>
       <div class="menu-grid">
         <div class="menu-item">
           <div class="img-wrapper"><img src="https://png.pngtree.com/png-clipart/20240405/original/pngtree-whole-grain-bread-on-the-transparent-background-png-image_14759029.png" alt="Pan Integral"></div>
           <h3>Pan Integral</h3>
-          <p>Harina integral, avena y semillas.</p>
+          <p>Harina integral, avena y semillas de girasol y lino. Perfecto para desayunos saludables.</p>
           <span class="price">120 cordobas</span>
         </div>
         <div class="menu-item">
           <div class="img-wrapper"><img src="https://static.vecteezy.com/system/resources/previews/034/617/037/non_2x/banana-bread-with-ai-generated-free-png.png" alt="Pan de Plátano"></div>
           <h3>Pan de Plátano</h3>
-          <p>Con pasas y chispas de chocolate.</p>
+          <p>Con pasas y chispas de chocolate belga. Especialidad de la casa, horneado diariamente.</p>
           <span class="price">65 cordobas</span>
         </div>
         <div class="menu-item">
           <div class="img-wrapper"><img src="https://cdn.craft.cloud/224393fa-1975-4d80-9067-ada3cb5948ca/assets/Rollitos_Receta.png" alt="Roll de Canela"></div>
           <h3>Roll de Canela</h3>
-          <p>Suave y esponjoso, con canela especiada.</p>
+          <p>Suave y esponjoso, con canela especiada y glaseado de vainilla. Ideal para acompañar café.</p>
           <span class="price">35 cordobas</span>
+        </div>
+          <div class="menu-item">
+          <div class="img-wrapper"><img src="https://www.dulces-laponderosa.com/wp-content/uploads/2020/09/polvorones-gourmet-la-ponderosa.png" alt="Roll de Canela"></div>
+          <h3>Pan de chocolate</h3>
+          <p>Suave y esponjoso, con canela especiada y glaseado de vainilla. Ideal para acompañar café.</p>
+          <span class="price">40 cordobas</span>
         </div>
       </div>
     </section>
   </main>
 
+  <!-- Footer -->
   <footer>
     <p>&copy; 2025 Panadería Alicia. Todos los derechos reservados.</p>
   </footer>
@@ -139,19 +176,78 @@
     burger.addEventListener('click', () => {
       nav.classList.toggle('open');
       burger.classList.toggle('open');
+      document.body.classList.toggle('no-scroll');
     });
 
-    // Previews de imágenes
-    document.querySelectorAll('.img-input input[type="url"]').forEach(input => {
-      input.addEventListener('input', () => {
+    // Previews de imágenes subidas
+    document.querySelectorAll('.img-input input[type="file"]').forEach(input => {
+      input.addEventListener('change', () => {
+        const file = input.files[0];
         const img = document.getElementById(input.dataset.target);
-        if (input.value.trim()) {
-          img.src = input.value.trim();
-          img.classList.remove('hidden');
-        } else {
+        if (!file) {
           img.src = '';
           img.classList.add('hidden');
+          return;
         }
+        const reader = new FileReader();
+        reader.onload = e => {
+          img.src = e.target.result;
+          img.classList.remove('hidden');
+        };
+        reader.readAsDataURL(file);
+      });
+    });
+
+    // Lógica para ingredientes visuales y carrito
+    const ingredients = document.querySelectorAll('.ingredient');
+    const cartGrid = document.querySelector('.cart-grid');
+    ingredients.forEach(ing => {
+      ing.addEventListener('click', () => {
+        const name = ing.dataset.name;
+        const imgSrc = ing.dataset.img;
+        const selected = ing.classList.toggle('selected');
+        if (selected) {
+          const item = document.createElement('div');
+          item.className = 'cart-item';
+          item.dataset.name = name;
+          item.innerHTML = `<img src="${imgSrc}" alt="${name}" /><span>${name}</span>`;
+          cartGrid.appendChild(item);
+          
+          // Animación de adición
+          item.style.opacity = '0';
+          item.style.transform = 'translateY(10px)';
+          setTimeout(() => {
+            item.style.transition = 'all 0.3s ease';
+            item.style.opacity = '1';
+            item.style.transform = 'translateY(0)';
+          }, 10);
+        } else {
+          const toRemove = cartGrid.querySelector(`.cart-item[data-name="${name}"]`);
+          if (toRemove) {
+            // Animación de eliminación
+            toRemove.style.opacity = '0';
+            toRemove.style.transform = 'translateY(-10px)';
+            setTimeout(() => {
+              cartGrid.removeChild(toRemove);
+            }, 300);
+          }
+        }
+      });
+    });
+    
+    // Animación al hacer scroll
+    document.addEventListener('DOMContentLoaded', function() {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.animation = 'fadeIn 0.8s ease forwards';
+          }
+        });
+      }, { threshold: 0.1 });
+      
+      document.querySelectorAll('.card, .menu-item').forEach(el => {
+        el.style.opacity = '0';
+        observer.observe(el);
       });
     });
   </script>
